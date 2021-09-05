@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" 
+    crossorigin="anonymous">
+    <title>Table de  multiplications</title>
+    
+</head>
+<body style="background-color: blueviolet;">
+    <div class="container text-center table">
+        
+        <h1>TABLE</h1>
+        <H2>MULTIPLICATION</H2>
+        <button onclick="soustraction()">-</button>&nbsp;&nbsp;<input type="text" id="input">&nbsp;&nbsp;<button onclick="addition()">+</button><br><br>
+        <button id="calculer" onclick="calculer(valinput.value)">Calculer</button>&nbsp;&nbsp;<button onclick="Effacer()">Effacer</button>
+    
+        <div id="para"></div>
+             
+    </div>
+
+        <script>
+    
+            function addition(){
+              
+                var  valinput =document.getElementById('input').value;
+                valinput++;
+                document.getElementById('input').value=valinput;
+                if(valinput>=0){
+                document.getElementById('calculer').disabled=false;
+                }
+            }
+        </script>
+
+        <script>
+            function soustraction(){
+                var  valinput =document.getElementById('input').value;
+                valinput--;
+                document.getElementById('input').value=valinput;
+                if(valinput<0){
+                document.getElementById('calculer').disabled=true; 
+                }
+            }
+            var  valinput =document.getElementById('input');
+             var resultat= document.getElementById('para');
+            //  resultat.innerHTML=calculer(valinput.value);
+        </script>
+        
+        <script>
+                function calculer(Valinput){
+
+                    //    writeln("table de"+i);
+                    //    writeln("<br>");
+                 if(Valinput>=0){ 
+                for (var j=1; j <=10; j++) {
+                    //   writeln(i+ "*"+j+"="+ i*j+'<br>');
+                      document.getElementById('para').innerHTML+=Valinput+ "*"+j+"="+ Valinput*j+'<br>';
+                }
+            }
+            }
+        </script>
+
+        <script>
+            function Effacer(){
+                document.getElementById('input').value='';
+                document.getElementById('para').innerHTML=''; 
+            }
+        </script>
+</body>
+</html>
